@@ -89,7 +89,7 @@ public class PizzaProducer {
             try {
                 RecordMetadata metadata = producer.send(producerRecord).get();
                 logger.info("""
-                        async message: {} / partition: {} / offset: {}
+                        sync message: {} / partition: {} / offset: {}
                         """,
                     pMessage.get("key"),
                     metadata.partition(),
