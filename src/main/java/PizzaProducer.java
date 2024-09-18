@@ -129,6 +129,14 @@ public class PizzaProducer {
         props.put(BOOTSTRAP_SERVERS_CONFIG, "10.211.55.53:9092");
         props.put(KEY_SERIALIZER_CLASS_CONFIG, keySerClass.getName());
         props.put(VALUE_SERIALIZER_CLASS_CONFIG, valueSerClass.getName());
+
+        // acks setting
+        // props.put(ACKS_CONFIG, "0");
+        // props.put(ACKS_CONFIG, "all");
+
+        // batch setting
+        // props.put(BATCH_SIZE_CONFIG, "32000");
+        // props.put(LINGER_MS_CONFIG, "20");
         return props;
     }
 
