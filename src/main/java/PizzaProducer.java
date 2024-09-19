@@ -142,6 +142,12 @@ public class PizzaProducer {
         // props.put(DELIVERY_TIMEOUT_MS_CONFIG, "29000"); // 29초: Caused by: org.apache.kafka.common.config.ConfigException: delivery.timeout.ms should be equal to or larger than linger.ms + request.timeout.ms
         // props.put(DELIVERY_TIMEOUT_MS_CONFIG, "40000");
 
+        // idempotence setting(to be broken)
+        // props.put(MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, "6");
+        // props.put(ACKS_CONFIG, "0");
+        // props.put(ENABLE_IDEMPOTENCE_CONFIG, "true");
+        // props.put(ACKS_CONFIG, "all");
+
         return props;
     }
 
