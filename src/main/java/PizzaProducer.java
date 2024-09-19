@@ -115,7 +115,7 @@ public class PizzaProducer {
 
         sendPizzaMessage(
             producer, topicName,
-            -1, 100, 1000, 100, false
+            -1, 1000, 0, 0, false
         );
 
         producer.close();
@@ -137,6 +137,11 @@ public class PizzaProducer {
         // batch setting
         // props.put(BATCH_SIZE_CONFIG, "32000");
         // props.put(LINGER_MS_CONFIG, "20");
+
+        // retry setting
+        // props.put(DELIVERY_TIMEOUT_MS_CONFIG, "29000"); // 29초: Caused by: org.apache.kafka.common.config.ConfigException: delivery.timeout.ms should be equal to or larger than linger.ms + request.timeout.ms
+        // props.put(DELIVERY_TIMEOUT_MS_CONFIG, "40000");
+
         return props;
     }
 
